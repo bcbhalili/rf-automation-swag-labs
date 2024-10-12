@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.0 on win32)" generated="20241012 15:30:09.066" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\Bien\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Input Text">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>${UsernameTestValues.SPECIALPHANUMERIC}</arg>
+<msg timestamp="20241012 15:30:09.605" level="FAIL">No keyword with name 'Input Text' found.</msg>
+<status status="FAIL" starttime="20241012 15:30:09.605" endtime="20241012 15:30:09.605"/>
+</kw>
+<kw name="SS01_Capture_Element">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Specialphanumeric Username</arg>
+<status status="NOT RUN" starttime="20241012 15:30:09.605" endtime="20241012 15:30:09.606"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Specialphanumeric Username</arg>
+<status status="NOT RUN" starttime="20241012 15:30:09.606" endtime="20241012 15:30:09.607"/>
+</kw>
+<kw name="WF01_Print_Value_to_Text_File">
+<arg>${UsernameTestValues.SPECIALPHANUMERIC}</arg>
+<arg>Specialphanumeric Username.txt</arg>
+<status status="NOT RUN" starttime="20241012 15:30:09.607" endtime="20241012 15:30:09.607"/>
+</kw>
+<kw name="Clear Element Text">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<status status="NOT RUN" starttime="20241012 15:30:09.608" endtime="20241012 15:30:09.608"/>
+</kw>
+<status status="PASS" starttime="20241012 15:30:09.084" endtime="20241012 15:30:10.488"/>
+</kw>
+<status status="PASS" starttime="20241012 15:30:09.083" endtime="20241012 15:30:10.489"/>
+</test>
+<status status="PASS" starttime="20241012 15:30:09.067" endtime="20241012 15:30:10.489"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

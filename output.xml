@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.0 on win32)" generated="20241005 16:05:10.748" rpa="false" schemaversion="4">
-<suite id="s1" name="SL TS1 Login" source="c:\Users\Bien\Desktop\rf-automation-swag-labs\SL_TS1_Login.robot">
-<kw name="SSU_Open_Automation_Browser" type="SETUP">
+<robot generator="Robot 6.1.1 (Python 3.11.0 on win32)" generated="20241012 15:35:08.193" rpa="false" schemaversion="4">
+<suite id="s1" name="SL TS1 Login" source="c:\Users\Bien\Desktop\rf-automation-swag-labs\Test Suites\SL_TS1_Login.robot">
+<kw name="SSU_Open_Automation_Browser" library="SL_R1_Login" type="SETUP">
 <arg>${Setup.URL}</arg>
 <arg>${Setup.BROWSER}</arg>
 <doc>This custom keyword opens an automation browser, navigtes to the target URL, then maximizes the browser window.</doc>
@@ -9,61 +9,61 @@
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20241005 16:05:10.931" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
-<status status="PASS" starttime="20241005 16:05:10.931" endtime="20241005 16:05:14.495"/>
+<msg timestamp="20241012 15:35:08.397" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<status status="PASS" starttime="20241012 15:35:08.396" endtime="20241012 15:35:11.937"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20241005 16:05:14.496" endtime="20241005 16:05:14.524"/>
+<status status="PASS" starttime="20241012 15:35:11.937" endtime="20241012 15:35:11.967"/>
 </kw>
-<status status="PASS" starttime="20241005 16:05:10.930" endtime="20241005 16:05:14.525"/>
+<status status="PASS" starttime="20241012 15:35:08.395" endtime="20241012 15:35:11.967"/>
 </kw>
-<test id="s1-t1" name="SL_TS1TC001" line="33">
+<test id="s1-t1" name="SL_TS1TC001" line="15">
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${Login_Header.DIV}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20241005 16:05:14.553" level="INFO">Element 'class:login_logo' is displayed.</msg>
-<status status="PASS" starttime="20241005 16:05:14.527" endtime="20241005 16:05:14.553"/>
+<msg timestamp="20241012 15:35:11.991" level="INFO">Element 'class:login_logo' is displayed.</msg>
+<status status="PASS" starttime="20241012 15:35:11.968" endtime="20241012 15:35:11.991"/>
 </kw>
-<kw name="SS01_Capture_Element">
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
 <arg>${Login_Header.DIV}</arg>
 <arg>Login - Header</arg>
 <doc>This custom keyword screen captures a specific element.</doc>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241005 16:05:14.554" endtime="20241005 16:05:14.571"/>
+<status status="PASS" starttime="20241012 15:35:11.993" endtime="20241012 15:35:12.020"/>
 </kw>
 <kw name="Capture Element Screenshot" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>Documentations/${TEST_NAME}/${description}.png</arg>
 <doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<msg timestamp="20241005 16:05:14.654" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC001/Login%20-%20Header.png"&gt;&lt;img src="Documentations/SL_TS1TC001/Login%20-%20Header.png" width="400px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20241005 16:05:14.572" endtime="20241005 16:05:14.654"/>
+<msg timestamp="20241012 15:35:12.126" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC001/Login%20-%20Header.png"&gt;&lt;img src="Documentations/SL_TS1TC001/Login%20-%20Header.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:12.021" endtime="20241012 15:35:12.126"/>
 </kw>
-<status status="PASS" starttime="20241005 16:05:14.554" endtime="20241005 16:05:14.654"/>
+<status status="PASS" starttime="20241012 15:35:11.992" endtime="20241012 15:35:12.126"/>
 </kw>
-<kw name="SS02_Capture_Full_Page_Showing_Element">
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
 <arg>${Login_Header.DIV}</arg>
 <arg>Login - Header</arg>
 <doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20241005 16:05:14.655" endtime="20241005 16:05:14.926"/>
+<status status="PASS" starttime="20241012 15:35:12.127" endtime="20241012 15:35:12.415"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241005 16:05:14.926" endtime="20241005 16:05:14.936"/>
+<status status="PASS" starttime="20241012 15:35:12.415" endtime="20241012 15:35:12.426"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20241005 16:05:15.032" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC001/Login%20-%20Header%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC001/Login%20-%20Header%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20241005 16:05:14.937" endtime="20241005 16:05:15.033"/>
+<msg timestamp="20241012 15:35:12.517" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC001/Login%20-%20Header%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC001/Login%20-%20Header%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:12.426" endtime="20241012 15:35:12.517"/>
 </kw>
-<status status="PASS" starttime="20241005 16:05:14.654" endtime="20241005 16:05:15.033"/>
+<status status="PASS" starttime="20241012 15:35:12.127" endtime="20241012 15:35:12.517"/>
 </kw>
 <doc>Test Case ID:             SL_TS1TC001
 Test Case Description:    Verify if Login header is visible.
@@ -76,55 +76,56 @@ Post-Requisite:
     - Login Header should be visible.</doc>
 <tag>Login</tag>
 <tag>Positive Testing</tag>
-<status status="PASS" starttime="20241005 16:05:14.525" endtime="20241005 16:05:15.033"/>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:11.967" endtime="20241012 15:35:12.518"/>
 </test>
-<test id="s1-t2" name="SL_TS1TC002" line="50">
+<test id="s1-t2" name="SL_TS1TC002" line="32">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${Login_Header.DIV}</arg>
 <arg>Swag Labs</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20241005 16:05:15.036" level="INFO">Verifying element 'class:login_logo' contains exact text 'Swag Labs'.</msg>
-<status status="PASS" starttime="20241005 16:05:15.035" endtime="20241005 16:05:15.050"/>
+<msg timestamp="20241012 15:35:12.521" level="INFO">Verifying element 'class:login_logo' contains exact text 'Swag Labs'.</msg>
+<status status="PASS" starttime="20241012 15:35:12.520" endtime="20241012 15:35:12.535"/>
 </kw>
-<kw name="SS01_Capture_Element">
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
 <arg>${Login_Header.DIV}</arg>
 <arg>Login - Header</arg>
 <doc>This custom keyword screen captures a specific element.</doc>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241005 16:05:15.052" endtime="20241005 16:05:15.062"/>
+<status status="PASS" starttime="20241012 15:35:12.537" endtime="20241012 15:35:12.548"/>
 </kw>
 <kw name="Capture Element Screenshot" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>Documentations/${TEST_NAME}/${description}.png</arg>
 <doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<msg timestamp="20241005 16:05:15.147" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC002/Login%20-%20Header.png"&gt;&lt;img src="Documentations/SL_TS1TC002/Login%20-%20Header.png" width="400px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20241005 16:05:15.063" endtime="20241005 16:05:15.147"/>
+<msg timestamp="20241012 15:35:12.624" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC002/Login%20-%20Header.png"&gt;&lt;img src="Documentations/SL_TS1TC002/Login%20-%20Header.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:12.548" endtime="20241012 15:35:12.624"/>
 </kw>
-<status status="PASS" starttime="20241005 16:05:15.051" endtime="20241005 16:05:15.147"/>
+<status status="PASS" starttime="20241012 15:35:12.536" endtime="20241012 15:35:12.625"/>
 </kw>
-<kw name="SS02_Capture_Full_Page_Showing_Element">
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
 <arg>${Login_Header.DIV}</arg>
 <arg>Login - Header</arg>
 <doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20241005 16:05:15.148" endtime="20241005 16:05:15.432"/>
+<status status="PASS" starttime="20241012 15:35:12.626" endtime="20241012 15:35:12.911"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241005 16:05:15.432" endtime="20241005 16:05:15.443"/>
+<status status="PASS" starttime="20241012 15:35:12.911" endtime="20241012 15:35:12.922"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20241005 16:05:15.528" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC002/Login%20-%20Header%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC002/Login%20-%20Header%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20241005 16:05:15.443" endtime="20241005 16:05:15.528"/>
+<msg timestamp="20241012 15:35:13.019" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC002/Login%20-%20Header%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC002/Login%20-%20Header%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:12.922" endtime="20241012 15:35:13.020"/>
 </kw>
-<status status="PASS" starttime="20241005 16:05:15.148" endtime="20241005 16:05:15.528"/>
+<status status="PASS" starttime="20241012 15:35:12.625" endtime="20241012 15:35:13.020"/>
 </kw>
 <doc>Test Case ID:             SL_TS1TC002
 Test Case Description:    Verify if Login header text is "Swag Labs".
@@ -137,54 +138,55 @@ Post-Requisite:
     - Login Header text should be "Swag Labs".</doc>
 <tag>Login</tag>
 <tag>Positive Testing</tag>
-<status status="PASS" starttime="20241005 16:05:15.034" endtime="20241005 16:05:15.529"/>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:12.519" endtime="20241012 15:35:13.020"/>
 </test>
-<test id="s1-t3" name="SL_TS1TC003" line="68">
+<test id="s1-t3" name="SL_TS1TC003" line="50">
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${Login_Forms.USERNAME_FIELD}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20241005 16:05:15.545" level="INFO">Element 'id:user-name' is displayed.</msg>
-<status status="PASS" starttime="20241005 16:05:15.531" endtime="20241005 16:05:15.545"/>
+<msg timestamp="20241012 15:35:13.038" level="INFO">Element 'id:user-name' is displayed.</msg>
+<status status="PASS" starttime="20241012 15:35:13.022" endtime="20241012 15:35:13.038"/>
 </kw>
-<kw name="SS01_Capture_Element">
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
 <arg>${Login_Forms.USERNAME_FIELD}</arg>
 <arg>Login - Username Field</arg>
 <doc>This custom keyword screen captures a specific element.</doc>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241005 16:05:15.546" endtime="20241005 16:05:15.557"/>
+<status status="PASS" starttime="20241012 15:35:13.040" endtime="20241012 15:35:13.050"/>
 </kw>
 <kw name="Capture Element Screenshot" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>Documentations/${TEST_NAME}/${description}.png</arg>
 <doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<msg timestamp="20241005 16:05:15.639" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC003/Login%20-%20Username%20Field.png"&gt;&lt;img src="Documentations/SL_TS1TC003/Login%20-%20Username%20Field.png" width="400px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20241005 16:05:15.557" endtime="20241005 16:05:15.640"/>
+<msg timestamp="20241012 15:35:13.128" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC003/Login%20-%20Username%20Field.png"&gt;&lt;img src="Documentations/SL_TS1TC003/Login%20-%20Username%20Field.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:13.050" endtime="20241012 15:35:13.129"/>
 </kw>
-<status status="PASS" starttime="20241005 16:05:15.546" endtime="20241005 16:05:15.640"/>
+<status status="PASS" starttime="20241012 15:35:13.039" endtime="20241012 15:35:13.129"/>
 </kw>
-<kw name="SS02_Capture_Full_Page_Showing_Element">
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
 <arg>${Login_Forms.USERNAME_FIELD}</arg>
 <arg>Login - Username Field</arg>
 <doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20241005 16:05:15.641" endtime="20241005 16:05:15.929"/>
+<status status="PASS" starttime="20241012 15:35:13.130" endtime="20241012 15:35:13.406"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241005 16:05:15.929" endtime="20241005 16:05:15.940"/>
+<status status="PASS" starttime="20241012 15:35:13.406" endtime="20241012 15:35:13.416"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20241005 16:05:16.024" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC003/Login%20-%20Username%20Field%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC003/Login%20-%20Username%20Field%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20241005 16:05:15.940" endtime="20241005 16:05:16.024"/>
+<msg timestamp="20241012 15:35:13.520" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC003/Login%20-%20Username%20Field%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC003/Login%20-%20Username%20Field%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:13.416" endtime="20241012 15:35:13.520"/>
 </kw>
-<status status="PASS" starttime="20241005 16:05:15.640" endtime="20241005 16:05:16.024"/>
+<status status="PASS" starttime="20241012 15:35:13.129" endtime="20241012 15:35:13.521"/>
 </kw>
 <doc>Test Case ID:             SL_TS1TC003
 Test Case Description:    Verify if Username field is visible.
@@ -197,53 +199,54 @@ Post-Requisite:
     - Username field is visible.</doc>
 <tag>Login</tag>
 <tag>Positive Testing</tag>
-<status status="PASS" starttime="20241005 16:05:15.530" endtime="20241005 16:05:16.025"/>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:13.021" endtime="20241012 15:35:13.521"/>
 </test>
-<test id="s1-t4" name="SL_TS1TC004" line="85">
+<test id="s1-t4" name="SL_TS1TC004" line="67">
 <kw name="Element Should Be Enabled" library="SeleniumLibrary">
 <arg>${Login_Forms.USERNAME_FIELD}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20241005 16:05:16.027" endtime="20241005 16:05:16.046"/>
+<status status="PASS" starttime="20241012 15:35:13.523" endtime="20241012 15:35:13.555"/>
 </kw>
-<kw name="SS01_Capture_Element">
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
 <arg>${Login_Forms.USERNAME_FIELD}</arg>
 <arg>Login - Username Field</arg>
 <doc>This custom keyword screen captures a specific element.</doc>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241005 16:05:16.047" endtime="20241005 16:05:16.061"/>
+<status status="PASS" starttime="20241012 15:35:13.557" endtime="20241012 15:35:13.574"/>
 </kw>
 <kw name="Capture Element Screenshot" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>Documentations/${TEST_NAME}/${description}.png</arg>
 <doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<msg timestamp="20241005 16:05:16.149" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC004/Login%20-%20Username%20Field.png"&gt;&lt;img src="Documentations/SL_TS1TC004/Login%20-%20Username%20Field.png" width="400px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20241005 16:05:16.061" endtime="20241005 16:05:16.149"/>
+<msg timestamp="20241012 15:35:13.642" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC004/Login%20-%20Username%20Field.png"&gt;&lt;img src="Documentations/SL_TS1TC004/Login%20-%20Username%20Field.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:13.574" endtime="20241012 15:35:13.643"/>
 </kw>
-<status status="PASS" starttime="20241005 16:05:16.047" endtime="20241005 16:05:16.150"/>
+<status status="PASS" starttime="20241012 15:35:13.556" endtime="20241012 15:35:13.643"/>
 </kw>
-<kw name="SS02_Capture_Full_Page_Showing_Element">
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
 <arg>${Login_Forms.USERNAME_FIELD}</arg>
 <arg>Login - Username Field</arg>
 <doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20241005 16:05:16.152" endtime="20241005 16:05:16.426"/>
+<status status="PASS" starttime="20241012 15:35:13.644" endtime="20241012 15:35:13.933"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241005 16:05:16.426" endtime="20241005 16:05:16.437"/>
+<status status="PASS" starttime="20241012 15:35:13.933" endtime="20241012 15:35:13.946"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20241005 16:05:16.522" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC004/Login%20-%20Username%20Field%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC004/Login%20-%20Username%20Field%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20241005 16:05:16.437" endtime="20241005 16:05:16.522"/>
+<msg timestamp="20241012 15:35:14.029" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC004/Login%20-%20Username%20Field%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC004/Login%20-%20Username%20Field%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:13.946" endtime="20241012 15:35:14.029"/>
 </kw>
-<status status="PASS" starttime="20241005 16:05:16.150" endtime="20241005 16:05:16.522"/>
+<status status="PASS" starttime="20241012 15:35:13.644" endtime="20241012 15:35:14.029"/>
 </kw>
 <doc>Test Case ID:             SL_TS1TC004
 Test Case Description:    Verify if Username field is enabled.
@@ -256,56 +259,57 @@ Post-Requisite:
     - Username field is enabled.</doc>
 <tag>Login</tag>
 <tag>Positive Testing</tag>
-<status status="PASS" starttime="20241005 16:05:16.026" endtime="20241005 16:05:16.523"/>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:13.522" endtime="20241012 15:35:14.030"/>
 </test>
-<test id="s1-t5" name="SL_TS1TC005" line="102">
+<test id="s1-t5" name="SL_TS1TC005" line="84">
 <kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
 <arg>${Login_Forms.USERNAME_FIELD}</arg>
 <arg>placeholder</arg>
 <arg>Username</arg>
 <doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20241005 16:05:16.539" level="INFO">Element 'id:user-name' attribute 'placeholder' contains value 'Username'.</msg>
-<status status="PASS" starttime="20241005 16:05:16.524" endtime="20241005 16:05:16.540"/>
+<msg timestamp="20241012 15:35:14.046" level="INFO">Element 'id:user-name' attribute 'placeholder' contains value 'Username'.</msg>
+<status status="PASS" starttime="20241012 15:35:14.031" endtime="20241012 15:35:14.046"/>
 </kw>
-<kw name="SS01_Capture_Element">
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
 <arg>${Login_Forms.USERNAME_FIELD}</arg>
 <arg>Login - Username Field</arg>
 <doc>This custom keyword screen captures a specific element.</doc>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241005 16:05:16.540" endtime="20241005 16:05:16.551"/>
+<status status="PASS" starttime="20241012 15:35:14.047" endtime="20241012 15:35:14.059"/>
 </kw>
 <kw name="Capture Element Screenshot" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>Documentations/${TEST_NAME}/${description}.png</arg>
 <doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<msg timestamp="20241005 16:05:16.630" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC005/Login%20-%20Username%20Field.png"&gt;&lt;img src="Documentations/SL_TS1TC005/Login%20-%20Username%20Field.png" width="400px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20241005 16:05:16.551" endtime="20241005 16:05:16.630"/>
+<msg timestamp="20241012 15:35:14.134" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC005/Login%20-%20Username%20Field.png"&gt;&lt;img src="Documentations/SL_TS1TC005/Login%20-%20Username%20Field.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:14.060" endtime="20241012 15:35:14.134"/>
 </kw>
-<status status="PASS" starttime="20241005 16:05:16.540" endtime="20241005 16:05:16.631"/>
+<status status="PASS" starttime="20241012 15:35:14.047" endtime="20241012 15:35:14.135"/>
 </kw>
-<kw name="SS02_Capture_Full_Page_Showing_Element">
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
 <arg>${Login_Forms.USERNAME_FIELD}</arg>
 <arg>Login - Username Field</arg>
 <doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20241005 16:05:16.632" endtime="20241005 16:05:16.903"/>
+<status status="PASS" starttime="20241012 15:35:14.136" endtime="20241012 15:35:14.411"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241005 16:05:16.903" endtime="20241005 16:05:16.913"/>
+<status status="PASS" starttime="20241012 15:35:14.412" endtime="20241012 15:35:14.423"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20241005 16:05:17.015" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC005/Login%20-%20Username%20Field%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC005/Login%20-%20Username%20Field%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20241005 16:05:16.913" endtime="20241005 16:05:17.015"/>
+<msg timestamp="20241012 15:35:14.508" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC005/Login%20-%20Username%20Field%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC005/Login%20-%20Username%20Field%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:14.424" endtime="20241012 15:35:14.508"/>
 </kw>
-<status status="PASS" starttime="20241005 16:05:16.631" endtime="20241005 16:05:17.015"/>
+<status status="PASS" starttime="20241012 15:35:14.135" endtime="20241012 15:35:14.508"/>
 </kw>
 <doc>Test Case ID:             SL_TS1TC005
 Test Case Description:    Verify if Username field placeholder text is "Username".
@@ -318,28 +322,1156 @@ Post-Requisite:
     - Username field placeholder text is "Username".</doc>
 <tag>Login</tag>
 <tag>Positive Testing</tag>
-<status status="PASS" starttime="20241005 16:05:16.523" endtime="20241005 16:05:17.016"/>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:14.031" endtime="20241012 15:35:14.509"/>
+</test>
+<test id="s1-t6" name="SL_TS1TC006" line="102">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20241012 15:35:14.525" level="INFO">Element 'id:password' is displayed.</msg>
+<status status="PASS" starttime="20241012 15:35:14.510" endtime="20241012 15:35:14.525"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<arg>Login - Password Field</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:14.526" endtime="20241012 15:35:14.538"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:14.613" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC006/Login%20-%20Password%20Field.png"&gt;&lt;img src="Documentations/SL_TS1TC006/Login%20-%20Password%20Field.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:14.538" endtime="20241012 15:35:14.613"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:14.526" endtime="20241012 15:35:14.613"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<arg>Login - Password Field</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:14.614" endtime="20241012 15:35:14.886"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:14.886" endtime="20241012 15:35:14.897"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:14.980" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC006/Login%20-%20Password%20Field%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC006/Login%20-%20Password%20Field%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:14.897" endtime="20241012 15:35:14.980"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:14.614" endtime="20241012 15:35:14.980"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC006
+Test Case Description:    Verify if Password field is visible.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Password field is visible.
+Post-Requisite:
+    - Password field is visible.</doc>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:14.510" endtime="20241012 15:35:14.982"/>
+</test>
+<test id="s1-t7" name="SL_TS1TC007" line="119">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20241012 15:35:14.983" endtime="20241012 15:35:15.000"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<arg>Login - Password Field</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:15.001" endtime="20241012 15:35:15.013"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:15.088" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC007/Login%20-%20Password%20Field.png"&gt;&lt;img src="Documentations/SL_TS1TC007/Login%20-%20Password%20Field.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:15.013" endtime="20241012 15:35:15.088"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:15.000" endtime="20241012 15:35:15.089"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<arg>Login - Password Field</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:15.090" endtime="20241012 15:35:15.365"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:15.365" endtime="20241012 15:35:15.375"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:15.460" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC007/Login%20-%20Password%20Field%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC007/Login%20-%20Password%20Field%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:15.375" endtime="20241012 15:35:15.460"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:15.089" endtime="20241012 15:35:15.460"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC007
+Test Case Description:    Verify if Password field is enabled.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Password field is enabled.
+Post-Requisite:
+    - Password field is enabled.</doc>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:14.983" endtime="20241012 15:35:15.461"/>
+</test>
+<test id="s1-t8" name="SL_TS1TC008" line="136">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<arg>placeholder</arg>
+<arg>Password</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<msg timestamp="20241012 15:35:15.475" level="INFO">Element 'id:password' attribute 'placeholder' contains value 'Password'.</msg>
+<status status="PASS" starttime="20241012 15:35:15.463" endtime="20241012 15:35:15.475"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<arg>Login - Password Field</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:15.477" endtime="20241012 15:35:15.487"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:15.566" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC008/Login%20-%20Password%20Field.png"&gt;&lt;img src="Documentations/SL_TS1TC008/Login%20-%20Password%20Field.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:15.487" endtime="20241012 15:35:15.566"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:15.476" endtime="20241012 15:35:15.567"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<arg>Login - Password Field</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:15.568" endtime="20241012 15:35:15.844"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:15.844" endtime="20241012 15:35:15.855"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:15.939" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC008/Login%20-%20Password%20Field%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC008/Login%20-%20Password%20Field%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:15.855" endtime="20241012 15:35:15.939"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:15.567" endtime="20241012 15:35:15.939"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC008
+Test Case Description:    Verify if Password field placeholder text is "Password".
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Password field placeholder text is "Password".
+Post-Requisite:
+    - Password field placeholder text is "Password".</doc>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:15.462" endtime="20241012 15:35:15.939"/>
+</test>
+<test id="s1-t9" name="SL_TS1TC009" line="154">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Login_Forms.LOGIN_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20241012 15:35:15.956" level="INFO">Element 'xpath://input[@id="login-button"]' is displayed.</msg>
+<status status="PASS" starttime="20241012 15:35:15.941" endtime="20241012 15:35:15.956"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.LOGIN_BUTTON}</arg>
+<arg>Login - Button Visible</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:15.957" endtime="20241012 15:35:15.969"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:16.047" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC009/Login%20-%20Button%20Visible.png"&gt;&lt;img src="Documentations/SL_TS1TC009/Login%20-%20Button%20Visible.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:15.970" endtime="20241012 15:35:16.047"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:15.957" endtime="20241012 15:35:16.048"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.LOGIN_BUTTON}</arg>
+<arg>Login - Button Visible</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:16.048" endtime="20241012 15:35:16.324"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:16.324" endtime="20241012 15:35:16.335"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:16.435" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC009/Login%20-%20Button%20Visible%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC009/Login%20-%20Button%20Visible%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:16.336" endtime="20241012 15:35:16.435"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:16.048" endtime="20241012 15:35:16.435"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC009
+Test Case Description:    Verify if Login button is visible.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Login button is visible.
+Post-Requisite:
+    - Login button should be visible.</doc>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:15.940" endtime="20241012 15:35:16.436"/>
+</test>
+<test id="s1-t10" name="SL_TS1TC010" line="171">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${Login_Forms.LOGIN_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20241012 15:35:16.438" endtime="20241012 15:35:16.454"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.LOGIN_BUTTON}</arg>
+<arg>Login - Button Enabled</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:16.455" endtime="20241012 15:35:16.471"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:16.555" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC010/Login%20-%20Button%20Enabled.png"&gt;&lt;img src="Documentations/SL_TS1TC010/Login%20-%20Button%20Enabled.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:16.472" endtime="20241012 15:35:16.555"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:16.454" endtime="20241012 15:35:16.555"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.LOGIN_BUTTON}</arg>
+<arg>Login - Button Enabled</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:16.556" endtime="20241012 15:35:16.832"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:16.832" endtime="20241012 15:35:16.843"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:16.925" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC010/Login%20-%20Button%20Enabled%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC010/Login%20-%20Button%20Enabled%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:16.843" endtime="20241012 15:35:16.925"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:16.556" endtime="20241012 15:35:16.926"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC010
+Test Case Description:    Verify if Login button is enabled.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Login button is enabled.
+Post-Requisite:
+    - Login button should be enabled.</doc>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:16.437" endtime="20241012 15:35:16.926"/>
+</test>
+<test id="s1-t11" name="SL_TS1TC011" line="188">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>${Login_Forms.LOGIN_BUTTON}</arg>
+<arg>value</arg>
+<arg>Login</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<msg timestamp="20241012 15:35:16.940" level="INFO">Element 'xpath://input[@id="login-button"]' attribute 'value' contains value 'Login'.</msg>
+<status status="PASS" starttime="20241012 15:35:16.928" endtime="20241012 15:35:16.941"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.LOGIN_BUTTON}</arg>
+<arg>Login - Button Value</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:16.942" endtime="20241012 15:35:16.953"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:17.036" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC011/Login%20-%20Button%20Value.png"&gt;&lt;img src="Documentations/SL_TS1TC011/Login%20-%20Button%20Value.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:16.953" endtime="20241012 15:35:17.037"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:16.941" endtime="20241012 15:35:17.037"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.LOGIN_BUTTON}</arg>
+<arg>Login - Button Value</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:17.038" endtime="20241012 15:35:17.311"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:17.311" endtime="20241012 15:35:17.321"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:17.417" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC011/Login%20-%20Button%20Value%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC011/Login%20-%20Button%20Value%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:17.322" endtime="20241012 15:35:17.418"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:17.038" endtime="20241012 15:35:17.418"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC011
+Test Case Description:    Verify if Login button text is "Login".
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Login button text is "Login".
+Post-Requisite:
+    - Login button text should be "Login".</doc>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:16.927" endtime="20241012 15:35:17.418"/>
+</test>
+<test id="s1-t12" name="SL_TS1TC012" line="206">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Login_Usernames.HEADER}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20241012 15:35:17.436" level="INFO">Element 'xpath://div[@class="login_credentials"]/h4' is displayed.</msg>
+<status status="PASS" starttime="20241012 15:35:17.420" endtime="20241012 15:35:17.436"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Usernames.HEADER}</arg>
+<arg>Login - Usernames Header Visible</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:17.438" endtime="20241012 15:35:17.448"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:17.513" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC012/Login%20-%20Usernames%20Header%20Visible.png"&gt;&lt;img src="Documentations/SL_TS1TC012/Login%20-%20Usernames%20Header%20Visible.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:17.448" endtime="20241012 15:35:17.514"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:17.437" endtime="20241012 15:35:17.514"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Usernames.HEADER}</arg>
+<arg>Login - Usernames Header Visible</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:17.515" endtime="20241012 15:35:17.791"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:17.791" endtime="20241012 15:35:17.801"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:17.902" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC012/Login%20-%20Usernames%20Header%20Visible%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC012/Login%20-%20Usernames%20Header%20Visible%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:17.802" endtime="20241012 15:35:17.902"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:17.514" endtime="20241012 15:35:17.902"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC012
+Test Case Description:    Verify if Usernames subheader is visible.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Usernames subheader is visible.
+Post-Requisite:
+    - Usernames subheader is visible.</doc>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:17.419" endtime="20241012 15:35:17.903"/>
+</test>
+<test id="s1-t13" name="SL_TS1TC013" line="223">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Login_Passwords.HEADER}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20241012 15:35:17.918" level="INFO">Element 'xpath://div[@class="login_password"]/h4' is displayed.</msg>
+<status status="PASS" starttime="20241012 15:35:17.904" endtime="20241012 15:35:17.919"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Passwords.HEADER}</arg>
+<arg>Login - Password Header Visible</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:17.920" endtime="20241012 15:35:17.931"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:17.994" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC013/Login%20-%20Password%20Header%20Visible.png"&gt;&lt;img src="Documentations/SL_TS1TC013/Login%20-%20Password%20Header%20Visible.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:17.931" endtime="20241012 15:35:17.994"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:17.919" endtime="20241012 15:35:17.994"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Passwords.HEADER}</arg>
+<arg>Login - Password Header Visible</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:17.995" endtime="20241012 15:35:18.272"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:18.272" endtime="20241012 15:35:18.282"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:18.383" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC013/Login%20-%20Password%20Header%20Visible%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC013/Login%20-%20Password%20Header%20Visible%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:18.283" endtime="20241012 15:35:18.383"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:17.995" endtime="20241012 15:35:18.383"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC013
+Test Case Description:    Verify if Password subheader is visible.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Password subheader is visible.
+Post-Requisite:
+    - Password subheader is visible.</doc>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<tag>UI</tag>
+<status status="PASS" starttime="20241012 15:35:17.903" endtime="20241012 15:35:18.385"/>
+</test>
+<test id="s1-t14" name="SL_TS1TC014" line="240">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>${UsernameTestValues.ALPHABETIC}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241012 15:35:18.387" level="INFO">Typing text 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20241012 15:35:18.387" endtime="20241012 15:35:18.558"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Alphabetic Username</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:18.559" endtime="20241012 15:35:18.571"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:18.646" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC014/Login%20-%20Alphabetic%20Username.png"&gt;&lt;img src="Documentations/SL_TS1TC014/Login%20-%20Alphabetic%20Username.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:18.571" endtime="20241012 15:35:18.646"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:18.558" endtime="20241012 15:35:18.646"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Alphabetic Username</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:18.647" endtime="20241012 15:35:18.923"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:18.924" endtime="20241012 15:35:18.934"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:19.033" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC014/Login%20-%20Alphabetic%20Username%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC014/Login%20-%20Alphabetic%20Username%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:18.934" endtime="20241012 15:35:19.033"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:18.646" endtime="20241012 15:35:19.033"/>
+</kw>
+<kw name="WF01_Print_Value_to_Text_File" library="SL_R1_Login">
+<arg>${UsernameTestValues.ALPHABETIC}</arg>
+<arg>Alphabetic Username.txt</arg>
+<doc>This custom keyword creates if does not exist and write a content to that file.</doc>
+<kw name="Create File" library="OperatingSystem">
+<arg>path=Documentations/${TEST_NAME}/${file_name}</arg>
+<arg>content=${content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20241012 15:35:19.035" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC014\Alphabetic Username.txt"&gt;C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC014\Alphabetic Username.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20241012 15:35:19.034" endtime="20241012 15:35:19.036"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:19.033" endtime="20241012 15:35:19.036"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20241012 15:35:19.036" endtime="20241012 15:35:19.060"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC014
+Test Case Description:    Verify if Username accepts alphabetic characters.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Username accepts alphabetic characters.
+Post-Requisite:
+    - Username accepts alphabetic characters.</doc>
+<tag>Functionality</tag>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<status status="PASS" starttime="20241012 15:35:18.386" endtime="20241012 15:35:19.060"/>
+</test>
+<test id="s1-t15" name="SL_TS1TC015" line="261">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>${UsernameTestValues.NUMERIC}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241012 15:35:19.063" level="INFO">Typing text '0123456789' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20241012 15:35:19.062" endtime="20241012 15:35:19.133"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Numeric Username</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:19.135" endtime="20241012 15:35:19.145"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:19.218" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC015/Login%20-%20Numeric%20Username.png"&gt;&lt;img src="Documentations/SL_TS1TC015/Login%20-%20Numeric%20Username.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:19.145" endtime="20241012 15:35:19.219"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:19.134" endtime="20241012 15:35:19.219"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Numeric Username</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:19.220" endtime="20241012 15:35:19.494"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:19.494" endtime="20241012 15:35:19.504"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:19.604" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC015/Login%20-%20Numeric%20Username%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC015/Login%20-%20Numeric%20Username%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:19.505" endtime="20241012 15:35:19.604"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:19.219" endtime="20241012 15:35:19.604"/>
+</kw>
+<kw name="WF01_Print_Value_to_Text_File" library="SL_R1_Login">
+<arg>${UsernameTestValues.NUMERIC}</arg>
+<arg>Numeric Username.txt</arg>
+<doc>This custom keyword creates if does not exist and write a content to that file.</doc>
+<kw name="Create File" library="OperatingSystem">
+<arg>path=Documentations/${TEST_NAME}/${file_name}</arg>
+<arg>content=${content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20241012 15:35:19.607" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC015\Numeric Username.txt"&gt;C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC015\Numeric Username.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20241012 15:35:19.606" endtime="20241012 15:35:19.608"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:19.605" endtime="20241012 15:35:19.608"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20241012 15:35:19.610" endtime="20241012 15:35:19.665"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC015
+Test Case Description:    Verify if Username accepts numeric characters.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Username accepts numeric characters.
+Post-Requisite:
+    - Username accepts numeric characters.</doc>
+<tag>Functionality</tag>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<status status="PASS" starttime="20241012 15:35:19.061" endtime="20241012 15:35:19.665"/>
+</test>
+<test id="s1-t16" name="SL_TS1TC016" line="282">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>${UsernameTestValues.SPECIALS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241012 15:35:19.669" level="INFO">Typing text '!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20241012 15:35:19.668" endtime="20241012 15:35:19.801"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Special Username</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:19.803" endtime="20241012 15:35:19.815"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:19.883" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC016/Login%20-%20Special%20Username.png"&gt;&lt;img src="Documentations/SL_TS1TC016/Login%20-%20Special%20Username.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:19.815" endtime="20241012 15:35:19.884"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:19.802" endtime="20241012 15:35:19.884"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Special Username</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:19.885" endtime="20241012 15:35:20.155"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:20.155" endtime="20241012 15:35:20.167"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:20.267" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC016/Login%20-%20Special%20Username%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC016/Login%20-%20Special%20Username%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:20.167" endtime="20241012 15:35:20.267"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:19.884" endtime="20241012 15:35:20.268"/>
+</kw>
+<kw name="WF01_Print_Value_to_Text_File" library="SL_R1_Login">
+<arg>${UsernameTestValues.SPECIALS}</arg>
+<arg>Special Username.txt</arg>
+<doc>This custom keyword creates if does not exist and write a content to that file.</doc>
+<kw name="Create File" library="OperatingSystem">
+<arg>path=Documentations/${TEST_NAME}/${file_name}</arg>
+<arg>content=${content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20241012 15:35:20.270" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC016\Special Username.txt"&gt;C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC016\Special Username.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20241012 15:35:20.269" endtime="20241012 15:35:20.270"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:20.268" endtime="20241012 15:35:20.270"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20241012 15:35:20.271" endtime="20241012 15:35:20.304"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC016
+Test Case Description:    Verify if Username accepts special characters.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Username accepts special characters.
+Post-Requisite:
+    - Username accepts special characters.</doc>
+<tag>Functionality</tag>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<status status="PASS" starttime="20241012 15:35:19.667" endtime="20241012 15:35:20.305"/>
+</test>
+<test id="s1-t17" name="SL_TS1TC017" line="303">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>${UsernameTestValues.ALPHANUMERIC}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241012 15:35:20.308" level="INFO">Typing text 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20241012 15:35:20.307" endtime="20241012 15:35:20.492"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Alphanumeric Username</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:20.494" endtime="20241012 15:35:20.506"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:20.576" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC017/Login%20-%20Alphanumeric%20Username.png"&gt;&lt;img src="Documentations/SL_TS1TC017/Login%20-%20Alphanumeric%20Username.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:20.507" endtime="20241012 15:35:20.576"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:20.492" endtime="20241012 15:35:20.576"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Alphanumeric Username</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:20.577" endtime="20241012 15:35:20.863"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:20.864" endtime="20241012 15:35:20.874"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:20.961" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC017/Login%20-%20Alphanumeric%20Username%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC017/Login%20-%20Alphanumeric%20Username%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:20.875" endtime="20241012 15:35:20.962"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:20.576" endtime="20241012 15:35:20.962"/>
+</kw>
+<kw name="WF01_Print_Value_to_Text_File" library="SL_R1_Login">
+<arg>${UsernameTestValues.ALPHANUMERIC}</arg>
+<arg>Alphanumeric Username.txt</arg>
+<doc>This custom keyword creates if does not exist and write a content to that file.</doc>
+<kw name="Create File" library="OperatingSystem">
+<arg>path=Documentations/${TEST_NAME}/${file_name}</arg>
+<arg>content=${content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20241012 15:35:20.965" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC017\Alphanumeric Username.txt"&gt;C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC017\Alphanumeric Username.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20241012 15:35:20.964" endtime="20241012 15:35:20.965"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:20.963" endtime="20241012 15:35:20.965"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20241012 15:35:20.966" endtime="20241012 15:35:20.994"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC017
+Test Case Description:    Verify if Username accepts alphanumeric characters.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Username accepts alphanumeric characters.
+Post-Requisite:
+    - Username accepts alphanumeric characters.</doc>
+<tag>Functionality</tag>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<status status="PASS" starttime="20241012 15:35:20.306" endtime="20241012 15:35:20.994"/>
+</test>
+<test id="s1-t18" name="SL_TS1TC018" line="324">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>${UsernameTestValues.SPECIALPHABETIC}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241012 15:35:20.997" level="INFO">Typing text '!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20241012 15:35:20.996" endtime="20241012 15:35:21.268"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Specialphabetic Username</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:21.270" endtime="20241012 15:35:21.283"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:21.388" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC018/Login%20-%20Specialphabetic%20Username.png"&gt;&lt;img src="Documentations/SL_TS1TC018/Login%20-%20Specialphabetic%20Username.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:21.283" endtime="20241012 15:35:21.388"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:21.269" endtime="20241012 15:35:21.388"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Specialphabetic Username</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:21.389" endtime="20241012 15:35:21.663"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:21.663" endtime="20241012 15:35:21.675"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:21.769" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC018/Login%20-%20Specialphabetic%20Username%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC018/Login%20-%20Specialphabetic%20Username%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:21.675" endtime="20241012 15:35:21.769"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:21.389" endtime="20241012 15:35:21.769"/>
+</kw>
+<kw name="WF01_Print_Value_to_Text_File" library="SL_R1_Login">
+<arg>${UsernameTestValues.SPECIALPHABETIC}</arg>
+<arg>Specialphabetic Username.txt</arg>
+<doc>This custom keyword creates if does not exist and write a content to that file.</doc>
+<kw name="Create File" library="OperatingSystem">
+<arg>path=Documentations/${TEST_NAME}/${file_name}</arg>
+<arg>content=${content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20241012 15:35:21.771" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC018\Specialphabetic Username.txt"&gt;C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC018\Specialphabetic Username.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20241012 15:35:21.770" endtime="20241012 15:35:21.772"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:21.770" endtime="20241012 15:35:21.772"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20241012 15:35:21.772" endtime="20241012 15:35:21.795"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC018
+Test Case Description:    Verify if Username accepts specialphabetic characters.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Username accepts specialphabetic characters.
+Post-Requisite:
+    - Username accepts specialphabetic characters.</doc>
+<tag>Functionality</tag>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<status status="PASS" starttime="20241012 15:35:20.995" endtime="20241012 15:35:21.795"/>
+</test>
+<test id="s1-t19" name="SL_TS1TC019" line="345">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>${UsernameTestValues.SPECIALNUMERIC}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241012 15:35:21.798" level="INFO">Typing text '!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~0123456789' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20241012 15:35:21.798" endtime="20241012 15:35:21.938"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Specialnumeric Username</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:21.939" endtime="20241012 15:35:21.950"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:22.034" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC019/Login%20-%20Specialnumeric%20Username.png"&gt;&lt;img src="Documentations/SL_TS1TC019/Login%20-%20Specialnumeric%20Username.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:21.950" endtime="20241012 15:35:22.034"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:21.938" endtime="20241012 15:35:22.034"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Specialnumeric Username</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:22.036" endtime="20241012 15:35:22.307"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:22.307" endtime="20241012 15:35:22.317"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:22.418" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC019/Login%20-%20Specialnumeric%20Username%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC019/Login%20-%20Specialnumeric%20Username%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:22.317" endtime="20241012 15:35:22.419"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:22.035" endtime="20241012 15:35:22.419"/>
+</kw>
+<kw name="WF01_Print_Value_to_Text_File" library="SL_R1_Login">
+<arg>${UsernameTestValues.SPECIALNUMERIC}</arg>
+<arg>Specialnumeric Username.txt</arg>
+<doc>This custom keyword creates if does not exist and write a content to that file.</doc>
+<kw name="Create File" library="OperatingSystem">
+<arg>path=Documentations/${TEST_NAME}/${file_name}</arg>
+<arg>content=${content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20241012 15:35:22.421" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC019\Specialnumeric Username.txt"&gt;C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC019\Specialnumeric Username.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20241012 15:35:22.420" endtime="20241012 15:35:22.421"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:22.419" endtime="20241012 15:35:22.421"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20241012 15:35:22.422" endtime="20241012 15:35:22.444"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC019
+Test Case Description:    Verify if Username accepts specialnumeric characters.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Username accepts specialnumeric characters.
+Post-Requisite:
+    - Username accepts specialnumeric characters.</doc>
+<tag>Functionality</tag>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<status status="PASS" starttime="20241012 15:35:21.797" endtime="20241012 15:35:22.445"/>
+</test>
+<test id="s1-t20" name="SL_TS1TC020" line="366">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>${UsernameTestValues.SPECIALPHANUMERIC}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241012 15:35:22.447" level="INFO">Typing text '!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20241012 15:35:22.447" endtime="20241012 15:35:22.699"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Specialphanumeric Username</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:22.700" endtime="20241012 15:35:22.713"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:22.782" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC020/Login%20-%20Specialphanumeric%20Username.png"&gt;&lt;img src="Documentations/SL_TS1TC020/Login%20-%20Specialphanumeric%20Username.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:22.713" endtime="20241012 15:35:22.782"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:22.700" endtime="20241012 15:35:22.783"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<arg>Login - Specialphanumeric Username</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:22.783" endtime="20241012 15:35:23.053"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:23.054" endtime="20241012 15:35:23.065"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:23.166" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC020/Login%20-%20Specialphanumeric%20Username%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC020/Login%20-%20Specialphanumeric%20Username%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:23.065" endtime="20241012 15:35:23.167"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:22.783" endtime="20241012 15:35:23.167"/>
+</kw>
+<kw name="WF01_Print_Value_to_Text_File" library="SL_R1_Login">
+<arg>${UsernameTestValues.SPECIALPHANUMERIC}</arg>
+<arg>Specialphanumeric Username.txt</arg>
+<doc>This custom keyword creates if does not exist and write a content to that file.</doc>
+<kw name="Create File" library="OperatingSystem">
+<arg>path=Documentations/${TEST_NAME}/${file_name}</arg>
+<arg>content=${content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20241012 15:35:23.169" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC020\Specialphanumeric Username.txt"&gt;C:\Users\Bien\Desktop\rf-automation-swag-labs\Documentations\SL_TS1TC020\Specialphanumeric Username.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20241012 15:35:23.168" endtime="20241012 15:35:23.170"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:23.168" endtime="20241012 15:35:23.170"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${Login_Forms.USERNAME_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20241012 15:35:23.170" endtime="20241012 15:35:23.192"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC020
+Test Case Description:    Verify if Username accepts specialphanumeric characters.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Username accepts specialphanumeric characters.
+Post-Requisite:
+    - Username accepts specialphanumeric characters.</doc>
+<tag>Functionality</tag>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<status status="PASS" starttime="20241012 15:35:22.446" endtime="20241012 15:35:23.193"/>
+</test>
+<test id="s1-t21" name="SL_TS1TC021" line="387">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<arg>${PasswordTestValues.ALPHANUMERIC}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241012 15:35:23.195" level="INFO">Typing text 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20241012 15:35:23.194" endtime="20241012 15:35:23.374"/>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<arg>type</arg>
+<arg>password</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<msg timestamp="20241012 15:35:23.387" level="INFO">Element 'id:password' attribute 'type' contains value 'password'.</msg>
+<status status="PASS" starttime="20241012 15:35:23.375" endtime="20241012 15:35:23.388"/>
+</kw>
+<kw name="SS01_Capture_Element" library="SL_R1_Login">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<arg>Login - Hidden Password</arg>
+<doc>This custom keyword screen captures a specific element.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:23.388" endtime="20241012 15:35:23.399"/>
+</kw>
+<kw name="Capture Element Screenshot" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>Documentations/${TEST_NAME}/${description}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<msg timestamp="20241012 15:35:23.470" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC021/Login%20-%20Hidden%20Password.png"&gt;&lt;img src="Documentations/SL_TS1TC021/Login%20-%20Hidden%20Password.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:23.399" endtime="20241012 15:35:23.472"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:23.388" endtime="20241012 15:35:23.472"/>
+</kw>
+<kw name="SS02_Capture_Full_Page_Showing_Element" library="SL_R1_Login">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<arg>Login - Hidden Password</arg>
+<doc>This custom keyword scroll to the target element and screen captures a full page.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20241012 15:35:23.473" endtime="20241012 15:35:23.745"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241012 15:35:23.745" endtime="20241012 15:35:23.757"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Documentations/${TEST_NAME}/${description} Full Page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241012 15:35:23.862" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Documentations/SL_TS1TC021/Login%20-%20Hidden%20Password%20Full%20Page.png"&gt;&lt;img src="Documentations/SL_TS1TC021/Login%20-%20Hidden%20Password%20Full%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241012 15:35:23.757" endtime="20241012 15:35:23.862"/>
+</kw>
+<status status="PASS" starttime="20241012 15:35:23.472" endtime="20241012 15:35:23.863"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${Login_Forms.PASSWORD_FIELD}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20241012 15:35:23.863" endtime="20241012 15:35:23.886"/>
+</kw>
+<doc>Test Case ID:             SL_TS1TC021
+Test Case Description:    Verify if Password field hides the characters typed by the user.
+Pre-Requisites:
+    - URL: https://www.saucedemo.com
+Test Steps:
+    1. Navigate to https://www.saucedemo.com.
+    2. Verify if Password field hides the characters typed by the user.
+Post-Requisite:
+    - Password field hides the characters typed by the user.</doc>
+<tag>Functionality</tag>
+<tag>Login</tag>
+<tag>Positive Testing</tag>
+<status status="PASS" starttime="20241012 15:35:23.193" endtime="20241012 15:35:23.886"/>
 </test>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20241005 16:05:17.017" endtime="20241005 16:05:19.113"/>
+<status status="PASS" starttime="20241012 15:35:23.888" endtime="20241012 15:35:26.039"/>
 </kw>
 <doc>Automation Engineer:  Biendroid
 Date Created:         October 5, 2024
-Test Scenario:        Check login interface (UI/UX) and its functionality.
+Test Scenario:        Check login interface (UI/UX) and its functionalities.
 Test Scenario ID:     SL_TS1</doc>
-<status status="PASS" starttime="20241005 16:05:10.751" endtime="20241005 16:05:19.113"/>
+<status status="PASS" starttime="20241012 15:35:08.197" endtime="20241012 15:35:26.039"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="21" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="5" fail="0" skip="0">Login</stat>
-<stat pass="5" fail="0" skip="0">Positive Testing</stat>
+<stat pass="8" fail="0" skip="0">Functionality</stat>
+<stat pass="21" fail="0" skip="0">Login</stat>
+<stat pass="21" fail="0" skip="0">Positive Testing</stat>
+<stat pass="13" fail="0" skip="0">UI</stat>
 </tag>
 <suite>
-<stat pass="5" fail="0" skip="0" id="s1" name="SL TS1 Login">SL TS1 Login</stat>
+<stat pass="21" fail="0" skip="0" id="s1" name="SL TS1 Login">SL TS1 Login</stat>
 </suite>
 </statistics>
 <errors>
