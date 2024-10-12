@@ -1,4 +1,9 @@
-# rf-automation-swag-labs
-This repository contains test automation programs to test Swag Labs.
+# What is Test Automation?
+Practice/process to efficiently test system that may occur repeatedly.
 
-This is an additional content.
+# Terms
+- Test Scenario: General Scope of your testing.
+- Test Case: Specific areas of testing based on Test Scenario.
+- Setup: Preparation steps for testing. Suite/Test.
+- Teardown: Steps for Conclusion of testing. Suite/Test.
+- Assertion: Confirmation.
