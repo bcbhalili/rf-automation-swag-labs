@@ -8,6 +8,7 @@ class Login_Forms:
     USERNAME_FIELD = "id:user-name"
     PASSWORD_FIELD = "id:password"
     LOGIN_BUTTON = """xpath://input[@id="login-button"]"""
+    ERROR = """xpath://h3"""
 class Login_Usernames:
     """This class contains properties to test the Login Username partition."""
 
