@@ -3,3 +3,4 @@ class Setup:
 
     URL = "https://www.saucedemo.com"
     BROWSER = "chrome"
+    SYNC_TIMEOUT = "10s"

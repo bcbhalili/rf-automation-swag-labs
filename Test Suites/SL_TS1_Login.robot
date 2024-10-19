@@ -5,9 +5,6 @@ Documentation
 ...    Test Scenario:        Check login interface (UI/UX) and its functionalities.
 ...    Test Scenario ID:     SL_TS1
 Resource          ../Resources/SL_R1_Login.resource
-Variables         ../Libraries/Variables/V1_Setup.py
-Variables         ../Libraries/Variables/V2_Login.py
-Variables         ../Libraries/Variables/V3_LoginTestValues.py
 Suite Setup       SSU_Open_Automation_Browser    ${Setup.URL}    ${Setup.BROWSER}
 Suite Teardown    Close Browser
 
