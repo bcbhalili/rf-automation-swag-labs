@@ -3,3 +3,8 @@ class InventoryURL:
 
     FULL = "https://www.saucedemo.com/inventory.html"
     SUB = "inventory.html"
+class InventoryElementTexts:
+    """This class contains element texts to be used in the Inventory page."""
+
+    HEADER = "Swag Labs"
+    SUBHEADER = "Products"

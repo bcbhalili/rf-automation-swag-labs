@@ -1,0 +1,9 @@
+${combination_name};${username};${password};${error_message};
+1_VU-IP;standard_user;invalid_password;Epic sadface: Username and password do not match any user in this service;
+2_VU-BP;standard_user;;Epic sadface: Password is required;
+3_IU_VP;invalid_username;secret_sauce;Epic sadface: Username and password do not match any user in this service;
+4_IU_IP;invalid_username;invalid_password;Epic sadface: Username and password do not match any user in this service;
+5_IU_BP;invalid_username;;Epic sadface: Password is required;
+6_BU_VP;;secret_sauce;Epic sadface: Username is required;
+7_BU_IP;;invalid_password;Epic sadface: Username is required;
+8_BU_BP;;;Epic sadface: Username is required;

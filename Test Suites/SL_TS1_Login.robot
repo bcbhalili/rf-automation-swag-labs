@@ -20,11 +20,9 @@ SL_TS1TC001
     ...        2. Verify if Login header is visible.
     ...    Post-Requisite:
     ...        - Login Header should be visible.
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Should Be Visible                 ${Login_Header.DIV}
-    SS01_Capture_Element                      ${Login_Header.DIV}    
-    ...                                       Login - Header
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Header.DIV}     
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Header.DIV}    
     ...                                       Login - Header
 SL_TS1TC002
     [Documentation]
@@ -37,12 +35,10 @@ SL_TS1TC002
     ...        2. Verify if Login header text is "Swag Labs".
     ...    Post-Requisite:
     ...        - Login Header text should be "Swag Labs".
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Text Should Be                    ${Login_Header.DIV}    
-    ...                                       Swag Labs
-    SS01_Capture_Element                      ${Login_Header.DIV}    
-    ...                                       Login - Header
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Header.DIV}     
+    ...                                       ${LoginElementTexts.HEADER}
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Header.DIV}    
     ...                                       Login - Header
 SL_TS1TC003
     [Documentation]
@@ -55,11 +51,9 @@ SL_TS1TC003
     ...        2. Verify if Username field is visible.
     ...    Post-Requisite:
     ...        - Username field is visible.
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Should Be Visible                 ${Login_Forms.USERNAME_FIELD}  
-    SS01_Capture_Element                      ${Login_Forms.USERNAME_FIELD}     
-    ...                                       Login - Username Field
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.USERNAME_FIELD}     
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.USERNAME_FIELD}     
     ...                                       Login - Username Field
 SL_TS1TC004
     [Documentation]
@@ -72,11 +66,9 @@ SL_TS1TC004
     ...        2. Verify if Username field is enabled.
     ...    Post-Requisite:
     ...        - Username field is enabled.
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Should Be Enabled                 ${Login_Forms.USERNAME_FIELD}  
-    SS01_Capture_Element                      ${Login_Forms.USERNAME_FIELD}     
-    ...                                       Login - Username Field
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.USERNAME_FIELD}     
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.USERNAME_FIELD}     
     ...                                       Login - Username Field
 SL_TS1TC005
     [Documentation]
@@ -89,12 +81,10 @@ SL_TS1TC005
     ...        2. Verify if Username field placeholder text is "Username".
     ...    Post-Requisite:
     ...        - Username field placeholder text is "Username".
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Attribute Value Should Be         ${Login_Forms.USERNAME_FIELD}      
     ...                                       placeholder    Username 
-    SS01_Capture_Element                      ${Login_Forms.USERNAME_FIELD}     
-    ...                                       Login - Username Field
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.USERNAME_FIELD}     
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.USERNAME_FIELD}     
     ...                                       Login - Username Field
 SL_TS1TC006
     [Documentation]
@@ -107,11 +97,9 @@ SL_TS1TC006
     ...        2. Verify if Password field is visible.
     ...    Post-Requisite:
     ...        - Password field is visible.
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Should Be Visible                 ${Login_Forms.PASSWORD_FIELD}  
-    SS01_Capture_Element                      ${Login_Forms.PASSWORD_FIELD}     
-    ...                                       Login - Password Field
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.PASSWORD_FIELD}     
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.PASSWORD_FIELD}     
     ...                                       Login - Password Field
 SL_TS1TC007
     [Documentation]
@@ -124,11 +112,9 @@ SL_TS1TC007
     ...        2. Verify if Password field is enabled.
     ...    Post-Requisite:
     ...        - Password field is enabled.
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Should Be Enabled                 ${Login_Forms.PASSWORD_FIELD}  
-    SS01_Capture_Element                      ${Login_Forms.PASSWORD_FIELD}     
-    ...                                       Login - Password Field
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.PASSWORD_FIELD}     
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.PASSWORD_FIELD}     
     ...                                       Login - Password Field
 SL_TS1TC008
     [Documentation]
@@ -141,12 +127,10 @@ SL_TS1TC008
     ...        2. Verify if Password field placeholder text is "Password".
     ...    Post-Requisite:
     ...        - Password field placeholder text is "Password".
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Attribute Value Should Be         ${Login_Forms.PASSWORD_FIELD}      
     ...                                       placeholder    Password 
-    SS01_Capture_Element                      ${Login_Forms.PASSWORD_FIELD}     
-    ...                                       Login - Password Field
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.PASSWORD_FIELD}     
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.PASSWORD_FIELD}     
     ...                                       Login - Password Field
 SL_TS1TC009
     [Documentation]
@@ -159,11 +143,9 @@ SL_TS1TC009
     ...        2. Verify if Login button is visible.
     ...    Post-Requisite:
     ...        - Login button should be visible.
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Should Be Visible                 ${Login_Forms.LOGIN_BUTTON}    
-    SS01_Capture_Element                      ${Login_Forms.LOGIN_BUTTON}     
-    ...                                       Login - Button Visible
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.LOGIN_BUTTON}     
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.LOGIN_BUTTON}     
     ...                                       Login - Button Visible
 SL_TS1TC010
     [Documentation]
@@ -176,11 +158,9 @@ SL_TS1TC010
     ...        2. Verify if Login button is enabled.
     ...    Post-Requisite:
     ...        - Login button should be enabled.
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Should Be Enabled                 ${Login_Forms.LOGIN_BUTTON}    
-    SS01_Capture_Element                      ${Login_Forms.LOGIN_BUTTON}     
-    ...                                       Login - Button Enabled
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.LOGIN_BUTTON}     
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.LOGIN_BUTTON}     
     ...                                       Login - Button Enabled
 SL_TS1TC011
     [Documentation]
@@ -193,12 +173,10 @@ SL_TS1TC011
     ...        2. Verify if Login button text is "Login".
     ...    Post-Requisite:
     ...        - Login button text should be "Login".
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Attribute Value Should Be         ${Login_Forms.LOGIN_BUTTON}    
     ...                                       value    Login  
-    SS01_Capture_Element                      ${Login_Forms.LOGIN_BUTTON}     
-    ...                                       Login - Button Value
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.LOGIN_BUTTON}     
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.LOGIN_BUTTON}     
     ...                                       Login - Button Value
 SL_TS1TC012
     [Documentation]
@@ -211,11 +189,9 @@ SL_TS1TC012
     ...        2. Verify if Usernames subheader is visible.
     ...    Post-Requisite:
     ...        - Usernames subheader is visible.
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Should Be Visible                 ${Login_Usernames.HEADER}
-    SS01_Capture_Element                      ${Login_Usernames.HEADER}   
-    ...                                       Login - Usernames Header Visible
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Usernames.HEADER}    
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Usernames.HEADER}   
     ...                                       Login - Usernames Header Visible
 SL_TS1TC013
     [Documentation]
@@ -228,11 +204,9 @@ SL_TS1TC013
     ...        2. Verify if Password subheader is visible.
     ...    Post-Requisite:
     ...        - Password subheader is visible.
-    [Tags]    Login    Positive Testing    UI
+    [Tags]    Login    Positive Testing    Regression
     Element Should Be Visible                 ${Login_Passwords.HEADER}
-    SS01_Capture_Element                      ${Login_Passwords.HEADER}   
-    ...                                       Login - Password Header Visible
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Passwords.HEADER}    
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Passwords.HEADER}   
     ...                                       Login - Password Header Visible
 SL_TS1TC014
     [Documentation]
@@ -245,12 +219,10 @@ SL_TS1TC014
     ...        2. Verify if Username accepts alphabetic characters.
     ...    Post-Requisite:
     ...        - Username accepts alphabetic characters.
-    [Tags]    Login    Positive Testing    Functionality
+    [Tags]    Login    Positive Testing    Regression
     Input Text                                ${Login_Forms.USERNAME_FIELD}    
     ...                                       ${UsernameTestValues.ALPHABETIC}
-    SS01_Capture_Element                      ${Login_Forms.USERNAME_FIELD}  
-    ...                                       Login - Alphabetic Username
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.USERNAME_FIELD}    
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.USERNAME_FIELD}  
     ...                                       Login - Alphabetic Username
     WF01_Print_Value_to_Text_File             ${UsernameTestValues.ALPHABETIC}    
     ...                                       Alphabetic Username.txt
@@ -266,12 +238,10 @@ SL_TS1TC015
     ...        2. Verify if Username accepts numeric characters.
     ...    Post-Requisite:
     ...        - Username accepts numeric characters.
-    [Tags]    Login    Positive Testing    Functionality
+    [Tags]    Login    Positive Testing    Regression
     Input Text                                ${Login_Forms.USERNAME_FIELD}    
     ...                                       ${UsernameTestValues.NUMERIC}
-    SS01_Capture_Element                      ${Login_Forms.USERNAME_FIELD}  
-    ...                                       Login - Numeric Username
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.USERNAME_FIELD}    
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.USERNAME_FIELD}  
     ...                                       Login - Numeric Username
     WF01_Print_Value_to_Text_File             ${UsernameTestValues.NUMERIC}    
     ...                                       Numeric Username.txt
@@ -287,12 +257,10 @@ SL_TS1TC016
     ...        2. Verify if Username accepts special characters.
     ...    Post-Requisite:
     ...        - Username accepts special characters.
-    [Tags]    Login    Positive Testing    Functionality
+    [Tags]    Login    Positive Testing    Regression
     Input Text                                ${Login_Forms.USERNAME_FIELD}    
     ...                                       ${UsernameTestValues.SPECIALS}
-    SS01_Capture_Element                      ${Login_Forms.USERNAME_FIELD}  
-    ...                                       Login - Special Username
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.USERNAME_FIELD}    
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.USERNAME_FIELD}  
     ...                                       Login - Special Username
     WF01_Print_Value_to_Text_File             ${UsernameTestValues.SPECIALS}    
     ...                                       Special Username.txt
@@ -308,12 +276,10 @@ SL_TS1TC017
     ...        2. Verify if Username accepts alphanumeric characters.
     ...    Post-Requisite:
     ...        - Username accepts alphanumeric characters.
-    [Tags]    Login    Positive Testing    Functionality
+    [Tags]    Login    Positive Testing    Regression
     Input Text                                ${Login_Forms.USERNAME_FIELD}    
     ...                                       ${UsernameTestValues.ALPHANUMERIC}
-    SS01_Capture_Element                      ${Login_Forms.USERNAME_FIELD}  
-    ...                                       Login - Alphanumeric Username
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.USERNAME_FIELD}    
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.USERNAME_FIELD}  
     ...                                       Login - Alphanumeric Username
     WF01_Print_Value_to_Text_File             ${UsernameTestValues.ALPHANUMERIC}    
     ...                                       Alphanumeric Username.txt
@@ -329,12 +295,10 @@ SL_TS1TC018
     ...        2. Verify if Username accepts specialphabetic characters.
     ...    Post-Requisite:
     ...        - Username accepts specialphabetic characters.
-    [Tags]    Login    Positive Testing    Functionality
+    [Tags]    Login    Positive Testing    Regression
     Input Text                                ${Login_Forms.USERNAME_FIELD}    
     ...                                       ${UsernameTestValues.SPECIALPHABETIC}
-    SS01_Capture_Element                      ${Login_Forms.USERNAME_FIELD}  
-    ...                                       Login - Specialphabetic Username
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.USERNAME_FIELD}    
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.USERNAME_FIELD}  
     ...                                       Login - Specialphabetic Username
     WF01_Print_Value_to_Text_File             ${UsernameTestValues.SPECIALPHABETIC}    
     ...                                       Specialphabetic Username.txt
@@ -350,12 +314,10 @@ SL_TS1TC019
     ...        2. Verify if Username accepts specialnumeric characters.
     ...    Post-Requisite:
     ...        - Username accepts specialnumeric characters.
-    [Tags]    Login    Positive Testing    Functionality
+    [Tags]    Login    Positive Testing    Regression
     Input Text                                ${Login_Forms.USERNAME_FIELD}    
     ...                                       ${UsernameTestValues.SPECIALNUMERIC}
-    SS01_Capture_Element                      ${Login_Forms.USERNAME_FIELD}  
-    ...                                       Login - Specialnumeric Username
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.USERNAME_FIELD}    
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.USERNAME_FIELD}  
     ...                                       Login - Specialnumeric Username
     WF01_Print_Value_to_Text_File             ${UsernameTestValues.SPECIALNUMERIC}    
     ...                                       Specialnumeric Username.txt
@@ -371,12 +333,10 @@ SL_TS1TC020
     ...        2. Verify if Username accepts specialphanumeric characters.
     ...    Post-Requisite:
     ...        - Username accepts specialphanumeric characters.
-    [Tags]    Login    Positive Testing    Functionality
+    [Tags]    Login    Positive Testing    Regression
     Input Text                                ${Login_Forms.USERNAME_FIELD}    
     ...                                       ${UsernameTestValues.SPECIALPHANUMERIC}
-    SS01_Capture_Element                      ${Login_Forms.USERNAME_FIELD}  
-    ...                                       Login - Specialphanumeric Username
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.USERNAME_FIELD}    
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.USERNAME_FIELD}  
     ...                                       Login - Specialphanumeric Username
     WF01_Print_Value_to_Text_File             ${UsernameTestValues.SPECIALPHANUMERIC}    
     ...                                       Specialphanumeric Username.txt
@@ -392,13 +352,30 @@ SL_TS1TC021
     ...        2. Verify if Password field hides the characters typed by the user.
     ...    Post-Requisite:
     ...        - Password field hides the characters typed by the user.
-    [Tags]    Login    Positive Testing    Functionality
+    [Tags]    Login    Positive Testing    Regression
     Input Text                                ${Login_Forms.PASSWORD_FIELD}    
     ...                                       ${PasswordTestValues.ALPHANUMERIC}
     Element Attribute Value Should Be         ${Login_Forms.PASSWORD_FIELD}    
     ...                                       type    password
-    SS01_Capture_Element                      ${Login_Forms.PASSWORD_FIELD}  
-    ...                                       Login - Hidden Password
-    SS02_Capture_Full_Page_Showing_Element    ${Login_Forms.PASSWORD_FIELD}    
+    SS03_Capture_WebElement_and_Full_Page     ${Login_Forms.PASSWORD_FIELD}  
     ...                                       Login - Hidden Password
     Clear Element Text                        ${Login_Forms.PASSWORD_FIELD}
+SL_TS1TC022
+    [Documentation]
+    ...    Test Case ID:             SL_TS1TC022
+    ...    Test Case Description:    Verify no error message if username is correct and password is correct and should proceed with the Inventory page.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Fill username and password.
+    ...        3. Click Login button.
+    ...        4. Verify no error message if username is correct and password is correct and should proceed with the Inventory page.
+    ...    Post-Requisite:
+    ...        - No error message if both username and password are correct, should proceed with the Inventory page.
+    [Tags]    Login    Positive Testing    Regression    Sanity 
+    SL_R1K001_Login                           ${UsernameTestValues.CORRECT}      ${PasswordTestValues.CORRECT}
+    Wait Until Element Is Visible             ${InventoryHeader.DIV}
+    Location Should Contain                   ${InventoryURL.SUB}
+    SS02_Capture_Full_Page_Showing_Element    ${InventoryHeader.DIV}    
+    ...                                       Inventory - Landing Page
