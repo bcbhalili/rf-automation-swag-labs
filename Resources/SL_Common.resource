@@ -1,6 +1,7 @@
 *** Settings ***
 Library        SeleniumLibrary
 Library        OperatingSystem
+Library        Collections
 Variables      ../Libraries/Variables/V1_Setup.py
 Variables      ../Libraries/Variables/V2_Login.py
 Variables      ../Libraries/Variables/V3_LoginTestValues.py
@@ -38,6 +39,13 @@ H005_Check_Element_Text_with_Sync
     [Arguments]        ${locator}    ${text}
     Wait Until Element Is Visible    ${locator}    ${Setup.SYNC_TIMEOUT}
     Wait Until Element Contains      ${locator}    ${text}
+H006_Check_Selected_Label_in_Dropdown
+    [Documentation]    This helper custom keyword waits until a particular dropdown is visible, gets the selected list label, then checks the retrieved list label if it is the expected list label.
+    [Arguments]        ${locator}    ${label}
+    ${selected_label}=     Get Selected List Label    
+    ...                    ${locator}
+    Should Be Equal        ${selected_label}    
+    ...                    ${label}
 #-------------------------------------------------------------------------------------------------------------------------------------------------                  
 SSU_Open_Automation_Browser
     [Documentation]    This custom keyword opens an automation browser, navigtes to the target URL, then maximizes the browser window.
@@ -57,6 +65,11 @@ SS02_Capture_Full_Page_Showing_Element
     Scroll Element Into View         ${locator}
     Wait Until Element Is Visible    ${locator}
     Capture Page Screenshot          Documentations/${SUITE_NAME}/${TEST_NAME}/${description} Full Page.png
+SS03_Capture_WebElement_and_Full_Page
+    [Documentation]    This custom keyword scroll to the target element and screen captures the target element and full page.
+    [Arguments]        ${locator}    ${description}
+    SS01_Capture_Element                      ${locator}    ${description}
+    SS02_Capture_Full_Page_Showing_Element    ${locator}    ${description}
 #-------------------------------------------------------------------------------------------------------------------------------------------------   
 WF01_Print_Value_to_Text_File
     [Documentation]    This custom keyword creates if does not exist and write a content to that file.

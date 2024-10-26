@@ -31,3 +31,7 @@ class ErrorMessages:
     NO_MATCH = "Epic sadface: Username and password do not match any user in this service"
     PASSWORD_REQUIRED = "Epic sadface: Password is required"
     USERNAME_REQUIRED = "Epic sadface: Username is required"
+class LoginElementTexts:
+    """This class contains element texts to be used in the Login page."""
+
+    HEADER = "Swag Labs"
