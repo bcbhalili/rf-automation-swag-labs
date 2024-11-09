@@ -172,3 +172,188 @@ SL_TS3TC008
     END
     SS03_Capture_WebElement_and_Full_Page     ${InventoryFilter.DROPDOWN}    
     ...                                       Inventory - Filter Options
+SL_TS3TC009
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC009
+    ...    Test Case Description:    Verify if all items have their product names visible.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if all items have their product names visible.
+    ...    Post-Requisite:
+    ...        - All items have their product names visible.
+    [Tags]     Inventory    Positive Testing    Regression
+    @{product_names}=      Get WebElements    ${InventoryProduct.NAME}    # The variable "product_names" will contain 6 WebElements.
+    Set Global Variable    ${product_names}
+    FOR    ${product_name}    IN    @{product_names}
+        Log                         ${product_name}
+        Element Should Be Visible   ${product_name}
+        SS01_Capture_Element        ${product_name}    ${product_name.text}
+    END
+SL_TS3TC010
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC010
+    ...    Test Case Description:    Verify if all items have their product descriptions visible.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if all items have their product descriptions visible.
+    ...    Post-Requisite:
+    ...        - All items have their product descriptions visible.
+    [Tags]     Inventory    Positive Testing    Regression
+    @{product_descriptions}=      Get WebElements    ${InventoryProduct.DESCRIPTION}    # The variable "product_descriptions" will contain 6 WebElements.
+    Set Global Variable    ${product_descriptions}
+    FOR    ${product_name}    ${product_description}    IN ZIP    ${product_names}    ${product_descriptions}
+        Log    ${product_name} - ${product_description}
+        Element Should Be Visible    ${product_description}
+        SS01_Capture_Element         ${product_description}    
+        ...                          ${product_name.text}
+    END
+SL_TS3TC011
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC011
+    ...    Test Case Description:    Verify if all items have their product prices visible.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if all items have their product prices visible.
+    ...    Post-Requisite:
+    ...        - All items have their product prices visible.
+    [Tags]     Inventory    Positive Testing    Regression
+    @{product_sections}=    Get WebElements    ${InventoryProduct.DIV}      # The variable "product_sections" will contain 6 WebElements.
+    @{product_prices}=      Get WebElements    ${InventoryProduct.PRICE}    # The variable "product_prices" will contain 6 WebElements.
+    Set Global Variable    ${product_prices}
+    FOR    ${product_price}    ${product_section}    IN ZIP    ${product_prices}    ${product_sections}
+        Log    ${product_price} - ${product_section}
+        Element Should Be Visible    ${product_price}
+        SS01_Capture_Element         ${product_section}    
+        ...                          ${product_price.text}
+    END   
+SL_TS3TC012
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC012
+    ...    Test Case Description:    Verify if all items have their add to cart buttons visible.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if all items have their add to cart buttons visible.
+    ...    Post-Requisite:
+    ...        - All items have their add to cart buttons visible.
+    [Tags]     Inventory    Positive Testing    Regression
+    @{add_to_cart_buttons}=          Get WebElements    
+    ...                              ${InventoryProduct.ADD_TO_CART_BUTTON}    # The variable "add_to_cart_buttons" will contain 6 WebElements.
+    ${add_to_cart_buttons_length}=   Get Length         
+    ...                              ${add_to_cart_buttons}
+    Set Global Variable              ${add_to_cart_buttons}
+
+    FOR    ${index}    IN RANGE    0    ${add_to_cart_buttons_length}
+        Log                         ${index}
+        Element Should Be Visible   ${add_to_cart_buttons}[${index}]
+        SS01_Capture_Element        ${add_to_cart_buttons}[${index}]    ${index}_Add to Cart Button
+    END
+SL_TS3TC013
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC013
+    ...    Test Case Description:    Verify if all items have their image visible.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if all items have their image visible.
+    ...    Post-Requisite:
+    ...        - All items have their image visible.
+    [Tags]     Inventory    Positive Testing    Regression
+    @{item_images}=          Get WebElements    
+    ...                      ${InventoryProduct.IMAGE}    # The variable "item_images" will contain 6 WebElements.
+
+    FOR    ${product_name}    ${item_image}    IN ZIP    ${product_names}    ${item_images}
+        Log    ${product_name} - ${item_image}
+        Element Should Be Visible    ${item_image}
+        SS01_Capture_Element         ${item_image}    
+        ...                          ${product_name.text}
+    END
+SL_TS3TC014
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC014
+    ...    Test Case Description:    Verify if the names of items available to purchase:
+    ...                                  - See Datasets/Products.xlsx
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if the names of items available to purchase.
+    ...    Post-Requisite:
+    ...        - Names of items available to purchase:
+    ...            > - See Datasets/Products.xlsx
+    [Tags]     Inventory    Positive Testing    Regression
+    @{ui_product_names}=    Create List
+    FOR    ${product_name}    IN    @{product_names}
+        Log                         ${product_name.text}
+        Append To List    ${ui_product_names}    
+        ...               ${product_name.text}
+    END
+
+    Open Excel Document                 Datasets/Products.xlsx            Products
+    @{actual_product_names}=            Read Excel Column                 1
+    ${actual_product_names_length}=     Get Length                        ${actual_product_names}
+    FOR    ${index}    IN RANGE    1    ${actual_product_names_length}
+        Log    ${index}
+        Should Contain    ${ui_product_names}    ${actual_product_names}[${index}]
+    END
+    Close All Excel Documents
+    SS02_Capture_Full_Page_Showing_Element    ${InventoryFooter.DIV}    Products
+SL_TS3TC015
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC015
+    ...    Test Case Description:    Verify if the description of items available to purchase:
+    ...                                  - See Datasets/Products.xlsx
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if the description of items available to purchase.
+    ...    Post-Requisite:
+    ...        - Names of description available to purchase:
+    ...            > - See Datasets/Products.xlsx
+    [Tags]     Inventory    Positive Testing    Regression
+    @{ui_product_descriptions}=     Create List
+    FOR    ${product_description}    IN    @{product_descriptions}
+        Log                          ${product_description.text}
+        Append To List    ${ui_product_descriptions}    
+        ...               ${product_description.text}
+    END
+
+    Open Excel Document                       Datasets/Products.xlsx            Products
+    @{actual_product_description}=            Read Excel Column                 2
+    ${actual_product_description_length}=     Get Length                        ${actual_product_description}
+    FOR    ${index}    IN RANGE    1    ${actual_product_description_length}
+        Log    ${index}
+        Should Contain    ${ui_product_descriptions}    ${actual_product_description}[${index}]
+    END
+    Close All Excel Documents
+    SS02_Capture_Full_Page_Showing_Element    ${InventoryFooter.DIV}    Products
