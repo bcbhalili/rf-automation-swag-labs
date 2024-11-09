@@ -2,6 +2,7 @@
 Library        SeleniumLibrary
 Library        OperatingSystem
 Library        Collections
+Library        ExcelLibrary
 Variables      ../Libraries/Variables/V1_Setup.py
 Variables      ../Libraries/Variables/V2_Login.py
 Variables      ../Libraries/Variables/V3_LoginTestValues.py
