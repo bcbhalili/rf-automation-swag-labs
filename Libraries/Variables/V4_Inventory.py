@@ -19,6 +19,7 @@ class InventoryProduct:
 
     DIV = "class:inventory_item"
     NAME = "class:inventory_item_name"
+    LINK = "css:.inventory_item_label a"
     DESCRIPTION = "class:inventory_item_desc"
     PRICE = "class:inventory_item_price"
     IMAGE = "css:img.inventory_item_img"
