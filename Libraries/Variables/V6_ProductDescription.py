@@ -20,6 +20,10 @@ class ProductDescriptionFooter:
     """This class contains properties of footer in the Product Description page."""
 
     DIV = "class:footer"
+    FB_LINK = "class:social_facebook"
+    TWITTER_LINK = "class:social_twitter"
+    LINKEDIN_LINK = "class:social_linkedin"
+    NOTES = "class:footer_copy"
 class ProductDescriptionMenu:
     """This class contains properties of Menu icon in the Product Description page."""
 

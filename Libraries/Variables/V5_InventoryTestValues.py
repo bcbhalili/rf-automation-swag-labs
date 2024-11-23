@@ -8,3 +8,6 @@ class InventoryElementTexts:
 
     HEADER = "Swag Labs"
     SUBHEADER = "Products"
+    ADD_TO_CART = "Add to cart"
+    REMOVE = "Remove"
+
