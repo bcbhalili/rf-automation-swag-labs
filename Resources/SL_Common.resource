@@ -3,6 +3,7 @@ Library        SeleniumLibrary
 Library        OperatingSystem
 Library        Collections
 Library        ExcelLibrary
+Variables      ../Libraries/Common/C1_TestValues.py
 Variables      ../Libraries/Variables/V1_Setup.py
 Variables      ../Libraries/Variables/V2_Login.py
 Variables      ../Libraries/Variables/V3_LoginTestValues.py
@@ -10,6 +11,7 @@ Variables      ../Libraries/Variables/V4_Inventory.py
 Variables      ../Libraries/Variables/V5_InventoryTestValues.py
 Variables      ../Libraries/Variables/V6_ProductDescription.py
 Variables      ../Libraries/Variables/V7_ProductDescriptionTestValues.py
+Variables      ../Libraries/Variables/V8_Cart.py
 
 *** Keywords ***
 # Legend: H      - Helper Custom Keywords

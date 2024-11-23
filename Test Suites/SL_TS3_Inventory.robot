@@ -270,6 +270,85 @@ SL_TS3TC012
 SL_TS3TC013
     [Documentation]
     ...    Test Case ID:             SL_TS3TC013
+    ...    Test Case Description:    Verify if all add to cart buttons changed to remove buttons upon click.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if all add to cart buttons changed to remove buttons upon click.
+    ...    Post-Requisite:
+    ...        - All add to cart buttons changed to remove buttons upon click.
+    [Tags]     Inventory    Positive Testing    Regression
+    @{add_remove_buttons}=            Get WebElements    ${InventoryProduct.BUTTON}
+    ${add_remove_buttons_length}=     Get Length         ${add_remove_buttons}
+      
+    FOR    ${index}    IN RANGE    0    ${add_remove_buttons_length}
+        Log                             ${index}
+        Element Text Should Be          ${add_remove_buttons}[${index}]    ${InventoryElementTexts.ADD_TO_CART}
+        SS01_Capture_Element            ${add_remove_buttons}[${index}]    ${index}_Add to Cart Button_Pre Click
+        H001_Click_Element_with_Sync    ${add_remove_buttons}[${index}]
+        @{add_remove_buttons}=          Get WebElements                    ${InventoryProduct.BUTTON}
+        Wait Until Element Contains     ${add_remove_buttons}[${index}]    ${InventoryElementTexts.REMOVE}
+        SS01_Capture_Element            ${add_remove_buttons}[${index}]    ${index}_Add to Cart Button_Post Click
+    END
+    SS02_Capture_Full_Page_Showing_Element    ${InventoryProduct.BUTTON}   Remove Buttons
+SL_TS3TC014
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC014
+    ...    Test Case Description:    Verify if all add to cart buttons changed to add to cart buttons upon click.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if all add to cart buttons changed to add to cart buttons upon click.
+    ...    Post-Requisite:
+    ...        - Verify if all add to cart buttons changed to add to cart buttons upon click.
+    [Tags]     Inventory    Positive Testing    Regression
+    @{add_remove_buttons}=            Get WebElements    ${InventoryProduct.BUTTON}
+    ${add_remove_buttons_length}=     Get Length         ${add_remove_buttons}
+      
+    FOR    ${index}    IN RANGE    0    ${add_remove_buttons_length}
+        Log                             ${index}
+        Element Text Should Be          ${add_remove_buttons}[${index}]    ${InventoryElementTexts.REMOVE}
+        SS01_Capture_Element            ${add_remove_buttons}[${index}]    ${index}_Remove Button_Pre Click
+        H001_Click_Element_with_Sync    ${add_remove_buttons}[${index}]
+        @{add_remove_buttons}=          Get WebElements                    ${InventoryProduct.BUTTON}
+        Wait Until Element Contains     ${add_remove_buttons}[${index}]    ${InventoryElementTexts.ADD_TO_CART}
+        SS01_Capture_Element            ${add_remove_buttons}[${index}]    ${index}_Remove Button_Post Click
+    END
+    SS02_Capture_Full_Page_Showing_Element    ${InventoryProduct.BUTTON}   Add to Cart Buttons
+SL_TS3TC015
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC013
+    ...    Test Case Description:    Verify if all items have their add to cart buttons enabled.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if all items have their add to cart buttons enabled.
+    ...    Post-Requisite:
+    ...        - All items have their add to cart buttons enabled.
+    [Tags]     Inventory    Positive Testing    Regression
+    @{add_remove_buttons}=            Get WebElements    ${InventoryProduct.BUTTON}
+    ${add_remove_buttons_length}=     Get Length         ${add_remove_buttons}
+      
+    FOR    ${index}    IN RANGE    0    ${add_remove_buttons_length}
+        Log                         ${index}
+        Element Should Be Enabled   ${add_remove_buttons}[${index}]
+        SS01_Capture_Element        ${add_remove_buttons}[${index}]    ${index}_Add Remove Button
+    END
+SL_TS3TC016
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC016
     ...    Test Case Description:    Verify if all items have their image visible.
     ...    Pre-Requisites:
     ...        - URL: https://www.saucedemo.com
@@ -291,9 +370,9 @@ SL_TS3TC013
         SS01_Capture_Element         ${item_image}    
         ...                          ${product_name.text}
     END
-SL_TS3TC014
+SL_TS3TC017
     [Documentation]
-    ...    Test Case ID:             SL_TS3TC014
+    ...    Test Case ID:             SL_TS3TC017
     ...    Test Case Description:    Verify if the names of items available to purchase:
     ...                                  - See Datasets/Products.xlsx
     ...    Pre-Requisites:
@@ -324,9 +403,9 @@ SL_TS3TC014
     END
     Close All Excel Documents
     SS02_Capture_Full_Page_Showing_Element    ${InventoryFooter.DIV}    Products
-SL_TS3TC015
+SL_TS3TC018
     [Documentation]
-    ...    Test Case ID:             SL_TS3TC015
+    ...    Test Case ID:             SL_TS3TC018
     ...    Test Case Description:    Verify if the description of items available to purchase:
     ...                                  - See Datasets/Products.xlsx
     ...    Pre-Requisites:
