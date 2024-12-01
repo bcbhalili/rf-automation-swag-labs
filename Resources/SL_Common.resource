@@ -75,6 +75,10 @@ SS03_Capture_WebElement_and_Full_Page
     [Arguments]        ${locator}    ${description}
     SS01_Capture_Element                      ${locator}    ${description}
     SS02_Capture_Full_Page_Showing_Element    ${locator}    ${description}
+SS04_Capture_Full_Page
+    [Documentation]    This custom keyword captures the current state of the page in full.
+    [Arguments]        ${description}
+    Capture Page Screenshot    Documentations/${SUITE_NAME}/${TEST_NAME}/${description} Full Page.png
 #-------------------------------------------------------------------------------------------------------------------------------------------------   
 WF01_Print_Value_to_Text_File
     [Documentation]    This custom keyword creates if does not exist and write a content to that file.

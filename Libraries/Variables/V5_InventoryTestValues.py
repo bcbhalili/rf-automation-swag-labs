@@ -10,4 +10,5 @@ class InventoryElementTexts:
     SUBHEADER = "Products"
     ADD_TO_CART = "Add to cart"
     REMOVE = "Remove"
+    MONETARY_UNIT = "$"
 

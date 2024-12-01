@@ -379,6 +379,7 @@ SL_TS3TC017
     ...        - URL: https://www.saucedemo.com
     ...        - Username: standard_user
     ...        - Password: secret_sauce
+    ...        - Excel file location: Datasets/Products.xlsx
     ...    Test Steps:
     ...        1. Navigate to https://www.saucedemo.com.
     ...        2. Login using Username and Password credentials.
@@ -386,7 +387,8 @@ SL_TS3TC017
     ...    Post-Requisite:
     ...        - Names of items available to purchase:
     ...            > - See Datasets/Products.xlsx
-    [Tags]     Inventory    Positive Testing    Regression
+    [Tags]        Inventory    Positive Testing    Regression
+    [Teardown]    Close All Excel Documents
     @{ui_product_names}=    Create List
     FOR    ${product_name}    IN    @{product_names}
         Log                         ${product_name.text}
@@ -401,7 +403,6 @@ SL_TS3TC017
         Log    ${index}
         Should Contain    ${ui_product_names}    ${actual_product_names}[${index}]
     END
-    Close All Excel Documents
     SS02_Capture_Full_Page_Showing_Element    ${InventoryFooter.DIV}    Products
 SL_TS3TC018
     [Documentation]
@@ -412,6 +413,7 @@ SL_TS3TC018
     ...        - URL: https://www.saucedemo.com
     ...        - Username: standard_user
     ...        - Password: secret_sauce
+    ...        - Excel file location: Datasets/Products.xlsx
     ...    Test Steps:
     ...        1. Navigate to https://www.saucedemo.com.
     ...        2. Login using Username and Password credentials.
@@ -419,7 +421,8 @@ SL_TS3TC018
     ...    Post-Requisite:
     ...        - Names of description available to purchase:
     ...            > - See Datasets/Products.xlsx
-    [Tags]     Inventory    Positive Testing    Regression
+    [Tags]        Inventory    Positive Testing    Regression
+    [Teardown]    Close All Excel Documents
     @{ui_product_descriptions}=     Create List
     FOR    ${product_description}    IN    @{product_descriptions}
         Log                          ${product_description.text}
@@ -434,5 +437,253 @@ SL_TS3TC018
         Log    ${index}
         Should Contain    ${ui_product_descriptions}    ${actual_product_description}[${index}]
     END
-    Close All Excel Documents
     SS02_Capture_Full_Page_Showing_Element    ${InventoryFooter.DIV}    Products
+SL_TS3TC019
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC019
+    ...    Test Case Description:    Verify if the price of items available to purchase contains "$" at the start:
+    ...                                  - See Datasets/Products.xlsx
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...        - Excel file location: Datasets/Products.xlsx
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if the price of items available to purchase contains "$" at the start.
+    ...    Post-Requisite:
+    ...        - Prices of items available to purchase contains "$":
+    ...            > - See Datasets/Products.xlsx
+    [Tags]     Inventory    Positive Testing    Regression
+    FOR    ${product_price}    IN    @{product_prices}
+        Log    ${product_price}
+        ${current_product_price}=    Get Text    
+        ...                          ${product_price}
+        Log                          ${current_product_price}[0]    # Displays the first character of the current_product_price.
+                                                                    # Expected: "$"
+        Should Be Equal              ${current_product_price}[0]    
+        ...                          ${InventoryElementTexts.MONETARY_UNIT} 
+    END
+SL_TS3TC020
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC020
+    ...    Test Case Description:    Verify if the price of items available to purchase corresponds to its actual price:
+    ...                                  - See Datasets/Products.xlsx
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...        - Excel file location: Datasets/Products.xlsx
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Verify if the price of items available to purchase corresponds to its actual price.
+    ...    Post-Requisite:
+    ...        - Price of items available to purchase corresponds to its actual price:
+    ...            > - See Datasets/Products.xlsx
+    [Tags]        Inventory    Positive Testing    Regression
+    [Teardown]    Close All Excel Documents
+    Open Excel Document                 Datasets/Products.xlsx            Products
+    @{actual_product_price}=            Read Excel Column                 3
+    ${actual_product_price_length}=     Get Length                        ${actual_product_price}
+    FOR    ${index}    IN RANGE    1    ${actual_product_price_length}
+        ${current_ui_price}=    Get Text      ${product_prices}[${index - 1}]
+        Log    Index: ${index}; Actual Price: ${InventoryElementTexts.MONETARY_UNIT}${actual_product_price}[${index}]; UI Price: ${current_ui_price}
+        Should Be Equal    ${current_ui_price}    
+        ...                ${InventoryElementTexts.MONETARY_UNIT}${actual_product_price}[${index}]
+    END
+    SS02_Capture_Full_Page_Showing_Element    ${InventoryFooter.DIV}    Products
+SL_TS3TC021
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC021
+    ...    Test Case Description:    Verify if footer is visible.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Click an item name.
+    ...        4. Page should be product description.
+    ...        5. Verify if footer is visible.
+    ...    Post-Requisite:
+    ...        - Footer is visible.
+    [Tags]     Inventory   Positive Testing    Regression
+    Element Should Be Visible                 ${InventoryFooter.DIV}
+    SS03_Capture_WebElement_and_Full_Page     ${InventoryFooter.DIV}
+    ...                                       Inventory - Footer
+SL_TS3TC022
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC022
+    ...    Test Case Description:    Verify if Twitter/X logo in footer is visible.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Click an item name.
+    ...        4. Page should be product description.
+    ...        5. Verify if Twitter/X logo in footer is visible.
+    ...    Post-Requisite:
+    ...        - Twitter/X logo in footer is visible.
+    [Tags]     Inventory   Positive Testing    Regression
+    Element Should Be Visible                 ${InventoryFooter.TWITTER_LINK}
+    SS03_Capture_WebElement_and_Full_Page     ${InventoryFooter.TWITTER_LINK}
+    ...                                       Inventory - Twitter Link
+SL_TS3TC023
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC023
+    ...    Test Case Description:    Verify if Sauce Labs' Twitter/X profile will display upon click of Twitter/X logo.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Click an item name.
+    ...        4. Page should be product description.
+    ...        5. Verify if Sauce Labs' Twitter/X profile will display upon click of Twitter/X logo.
+    ...    Post-Requisite:
+    ...        - Sauce Labs' Twitter/X profile is visible upon click of Twitter/X logo.
+    [Tags]        Inventory   Positive Testing    Regression
+    [Teardown]    Run Keywords    Close Window
+    ...           AND             Switch Window    MAIN
+    H001_Click_Element_with_Sync    ${InventoryFooter.TWITTER_LINK}    # Opens a new tab upon click.
+    Switch Window                   NEW                                # Switches to the recently-opened tab.
+    Wait Until Location Is          ${BaseLinks.TWITTER}
+    Sleep                           ${Setup.LOAD_TIMEOUT}
+    SS04_Capture_Full_Page          X
+SL_TS3TC024
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC024
+    ...    Test Case Description:    Verify if LinkedIn logo in footer is visible.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Click an item name.
+    ...        4. Page should be product description.
+    ...        5. Verify if LinkedIn logo in footer is visible.
+    ...    Post-Requisite:
+    ...        - LinkedIn logo in footer is visible.
+    [Tags]     Inventory   Positive Testing    Regression
+    Element Should Be Visible                 ${InventoryFooter.LINKEDIN_LINK}
+    SS03_Capture_WebElement_and_Full_Page     ${InventoryFooter.LINKEDIN_LINK}
+    ...                                       Inventory - LinkedIn Link
+SL_TS3TC025
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC025
+    ...    Test Case Description:    Verify if Sauce Labs' LinkedIn profile will display upon click of LinkedIn logo.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Click an item name.
+    ...        4. Page should be product description.
+    ...        5. Verify if Sauce Labs' LinkedIn profile will display upon click of LinkedIn logo.
+    ...    Post-Requisite:
+    ...        - Sauce Labs' LinkedIn is visible upon click of LinkedIn logo.
+    [Tags]        Inventory   Positive Testing    Regression
+    [Teardown]    Run Keywords    Close Window
+    ...           AND             Switch Window    MAIN
+    H001_Click_Element_with_Sync    ${InventoryFooter.LINKEDIN_LINK}    # Opens a new tab upon click.
+    Switch Window                   NEW                                # Switches to the recently-opened tab.
+    Wait Until Location Is          ${BaseLinks.LINKEDIN}
+    Sleep                           ${Setup.LOAD_TIMEOUT}
+    SS04_Capture_Full_Page          LinkedIn
+SL_TS3TC026
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC026
+    ...    Test Case Description:    Verify if Facebook logo in footer is visible.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Click an item name.
+    ...        4. Page should be product description.
+    ...        5. Verify if Facebook logo in footer is visible.
+    ...    Post-Requisite:
+    ...        - Facebook logo in footer is visible.
+    [Tags]     Inventory   Positive Testing    Regression
+    Element Should Be Visible                 ${InventoryFooter.FB_LINK}
+    SS03_Capture_WebElement_and_Full_Page     ${InventoryFooter.FB_LINK}
+    ...                                       Inventory - Facebook Link
+SL_TS3TC027
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC027
+    ...    Test Case Description:    Verify if Sauce Labs' Facebook profile will display upon click of Facebook logo.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Click an item name.
+    ...        4. Page should be product description.
+    ...        5. Verify if Sauce Labs' Facebook profile will display upon click of Facebook logo.
+    ...    Post-Requisite:
+    ...        - Sauce Labs' Facebook is visible upon click of Facebook logo.
+    [Tags]        Inventory   Positive Testing    Regression
+    [Teardown]    Run Keywords    Close Window
+    ...           AND             Switch Window    MAIN
+    H001_Click_Element_with_Sync    ${InventoryFooter.FB_LINK}    # Opens a new tab upon click.
+    Switch Window                   NEW                           # Switches to the recently-opened tab.
+    Wait Until Location Is          ${BaseLinks.FACEBOOK}
+    Sleep                           ${Setup.LOAD_TIMEOUT}
+    SS04_Capture_Full_Page          Facebook
+SL_TS3TC028
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC028
+    ...    Test Case Description:    Verify if the footer notes is visible.
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Click an item name.
+    ...        4. Page should be product description.
+    ...        5. Verify if the footer notes is visible.
+    ...    Post-Requisite:
+    ...        - Footer notes is visible.
+    [Tags]     Inventory   Positive Testing    Regression
+    Element Should Be Visible                 ${InventoryFooter.NOTES}
+    SS03_Capture_WebElement_and_Full_Page     ${InventoryFooter.NOTES}
+    ...                                       Inventory - Footer Notes
+SL_TS3TC029
+    [Documentation]
+    ...    Test Case ID:             SL_TS3TC029
+    ...    Test Case Description:    Verify if the footer text is "© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy".
+    ...    Pre-Requisites:
+    ...        - URL: https://www.saucedemo.com
+    ...        - Username: standard_user
+    ...        - Password: secret_sauce
+    ...    Test Steps:
+    ...        1. Navigate to https://www.saucedemo.com.
+    ...        2. Login using Username and Password credentials.
+    ...        3. Click an item name.
+    ...        4. Page should be product description.
+    ...        5. Verify if the footer text is "© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy".
+    ...    Post-Requisite:
+    ...        - Footer text is "© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy".
+    [Tags]     Inventory   Positive Testing    Regression
+    Element Text Should Be                    ${InventoryFooter.NOTES}   
+    ...                                       ${CommonFieldValues.FOOTER_TEXT}
+    SS03_Capture_WebElement_and_Full_Page     ${InventoryFooter.NOTES}
+    ...                                       Inventory - Footer Notes
