@@ -29,3 +29,7 @@ class InventoryFooter:
     """This class contains properties of footer in the Inventory page."""
 
     DIV = "class:footer"
+    FB_LINK = "class:social_facebook"
+    TWITTER_LINK = "class:social_twitter"
+    LINKEDIN_LINK = "class:social_linkedin"
+    NOTES = "class:footer_copy"
