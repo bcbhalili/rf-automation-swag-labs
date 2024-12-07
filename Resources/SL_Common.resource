@@ -12,6 +12,9 @@ Variables      ../Libraries/Variables/V5_InventoryTestValues.py
 Variables      ../Libraries/Variables/V6_ProductDescription.py
 Variables      ../Libraries/Variables/V7_ProductDescriptionTestValues.py
 Variables      ../Libraries/Variables/V8_Cart.py
+Variables      ../Libraries/Variables/V9_Information.py
+Variables      ../Libraries/Variables/V10_Overview.py
+Variables      ../Libraries/Variables/V11_Complete.py
 
 *** Keywords ***
 # Legend: H      - Helper Custom Keywords
