@@ -9,7 +9,7 @@ class CartSubHeader:
 class CartLinks:
     """This class contains properties of links of Cart page."""
 
-    BACK = "id:back-to-products"
+    CHECKOUT = "id:checkout"
     CONTINUE_SHOPPING = "id:continue-shopping"
 class CartFooter:
     """This class contains properties of footer in the Cart page."""
