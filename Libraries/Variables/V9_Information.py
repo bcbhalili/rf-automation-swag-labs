@@ -12,6 +12,10 @@ class InformationForm:
     FIRST_NAME_FIELD = "id:first-name"
     LAST_NAME_FIELD = "id:last-name"
     POSTAL_CODE_FIELD = "id:postal-code"
+class InformationError:
+    """This class contains properties in the error pop-up in Information Page."""
+
+    TEXT = """//h3[@data-test="error"]"""
 class InformationButtons:
     """This class contains properties of buttons in Information page."""
 

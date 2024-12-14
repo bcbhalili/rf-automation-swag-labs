@@ -1,0 +1,5 @@
+${combination_name};${username};${password};${number_of_items_added_to_cart};${first_name};${last_name};${zip_code};${error_message}
+001_BLANK_FN;standard_user;secret_sauce;3;;Bonifacio;1111;Error: First Name is required
+002_BLANK_LN;standard_user;secret_sauce;3;Antonio;;1112;Error: Last Name is required
+003_BLANK_ZC;standard_user;secret_sauce;3;Melchora;Aquino;;Error: Postal Code is required
+004_ALL_BLANK;standard_user;secret_sauce;3;;;;Error: First Name is required

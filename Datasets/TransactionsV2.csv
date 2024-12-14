@@ -1,0 +1,3 @@
+${combination_name};${username};${password};${number_of_items_added_to_cart}
+001_UNDER;standard_user;secret_sauce;-1
+002_OVER;standard_user;secret_sauce;7
