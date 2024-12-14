@@ -1,2 +1,5 @@
 ${combination_name};${username};${password};${number_of_items_added_to_cart};${first_name};${last_name};${zip_code}
-1_1ITEM;standard_user;secret_sauce;1;Andres;Bonifacio;1111
+001_1ITEM;standard_user;secret_sauce;1;Andres;Bonifacio;1111
+002_MAXITEMS;standard_user;secret_sauce;6;Antonio;Luna;1112
+003_3ITEMS;standard_user;secret_sauce;3;Melchora;Aquino;1113
+004_0ITEMS;standard_user;secret_sauce;0;Emilio;Aguinaldo;1114
